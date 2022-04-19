@@ -8,6 +8,7 @@
 
 :root {
     --main-color: rgb(59, 144, 255);
+    --main-inactive-color: rgba(59, 144, 255, 0.164);
     --secondary-color: rgb(255, 255, 255);
     --background-color: rgb(234 239 245);
 }
@@ -170,9 +171,14 @@
     grid-row: 1 / -1;
     overflow: auto;
     padding-right: 10px;
+    background-color: var(--main-inactive-color);
+    -webkit-background-clip: text;
+    transition: background-color .8s;
 }
 
-
+.projects:hover {
+    background-color: var(--main-color);
+}
 
 .card {
     background-color: var(--secondary-color);
@@ -187,7 +193,7 @@
 }
 
 ::-webkit-scrollbar {
-    width: 7px;
+    width: 8px;
 }
 
 /* Track */
@@ -197,12 +203,7 @@
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: var(--background-color);
-    border-radius: 3px;
-    transition: 1s;
+    background-color: inherit;
+    border-radius: 4px;
 }
 
-/* Handle on hover */
-.projects:hover::-webkit-scrollbar-thumb {
-    background: var(--main-color);
-}
