@@ -172,13 +172,13 @@
     grid-row: 1 / -1;
     overflow: auto;
     padding-right: 10px;
-    background-color: var(--main-inactive-color);
-    -webkit-background-clip: text;
-    transition: background-color .8s;
+    border-color: var(--main-inactive-color);
+    /* -webkit-background-clip: text; */
+    transition: border-color .8s;
 }
 
 .projects:hover {
-    background-color: var(--main-color);
+    border-color: var(--main-color);
 }
 
 .card {
@@ -257,7 +257,10 @@
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background-color: inherit;
+    /* background-color: inherit; */
+    border-color: inherit;
+    border-right-style: inset;
+    border-right-width: calc(100vw + 100vh);
     border-radius: 4px;
 }
 
