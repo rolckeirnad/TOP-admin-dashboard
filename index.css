@@ -8,6 +8,7 @@
 
 :root {
     --main-color: rgb(59, 144, 255);
+    --main-color-light: rgba(59, 144, 255, 0.3);
     --main-inactive-color: rgba(59, 144, 255, 0.164);
     --secondary-color: rgb(255, 255, 255);
     --background-color: rgb(234 239 245);
@@ -212,6 +213,16 @@
     border: none;
     background-color: var(--secondary-color);
     cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s linear;
+}
+
+.cardActionContainer:hover {
+    background-color: var(--main-color-light);
+}
+
+button.cardActionContainer:hover::before {
+    opacity: 0;
 }
 
 .cardActionContainer:not(:last-Child)::before {
@@ -224,6 +235,7 @@
     width: 11px;
     height: 11px;
     border-radius: 5px;
+    transition: background-color 0.1s linear;
 }
 
 .cardActionContainer:not(:last-Child)::after {
@@ -263,4 +275,3 @@
     border-right-width: calc(100vw + 100vh);
     border-radius: 4px;
 }
-
