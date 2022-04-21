@@ -282,12 +282,12 @@ button.cardActionContainer:hover::before {
     border-radius: 4px;
 }
 
-.announcements {
+.announcements, .trending {
     display: grid;
     grid-template-rows: minmax(0, 1fr) minmax(0, 10fr);
 }
 
-.announcementsContainer {
+.announcementsContainer, .trendingContainer {
     background-color: var(--secondary-color);
     padding: 5px 20px;
     border-radius: 10px;
@@ -321,6 +321,29 @@ button.cardActionContainer:hover::before {
     overflow: hidden;
 }
 
-.trending {
-    overflow: hidden;
+.profileCard {
+    display: grid;
+    grid: 1fr / 1fr 8fr;
+    gap: 5px;
+    font-family: 'Ubuntu';
+    font-size: 0.9rem;
+}
+
+.profileCard .profileImg {
+    width: 35px;
+    align-self: center;
+}
+
+.profileCard .profileData {
+    display: grid;
+    grid-auto-flow: row;
+    align-items: center;
+}
+
+.profileCard .profileData .userName {
+    font-weight: 500;
+}
+
+.profileCard .profileData .userDescription {
+    color: var(--main-content-font-color);
 }
