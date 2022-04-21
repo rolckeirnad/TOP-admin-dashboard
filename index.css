@@ -42,6 +42,10 @@
     grid-template-columns: 2fr 70px 3fr;
 }
 
+.profile>* {
+    cursor: pointer;
+}
+
 .profile span:first-of-type {
     justify-self: start;
     padding-left: 10px;
@@ -57,12 +61,11 @@
 }
 
 .greeting {
-    /* height: 50px;
-    margin-top: 20px; */
     font-size: 1.1rem;
     display: grid;
     align-items: center;
     grid: 1fr 1fr / 1fr 8fr;
+    cursor: default;
 }
 
 .greeting span:first-of-type {
@@ -90,10 +93,18 @@
 #search {
     flex: 1;
     margin: 0 30px 0 10px;
+    padding-left: 10px;
     height: 20px;
     border: none;
     border-radius: 10px;
     background-color: var(--background-color);
+    color: var(--main-content-font-color);
+}
+
+#search:focus {
+    outline: none;
+    color: black;
+    border: 1px solid var(--main-color-light);
 }
 
 .actionButtons {
@@ -112,6 +123,7 @@
     border-radius: 15px;
     height: 30px;
     width: 90px;
+    cursor: pointer;
 }
 
 .sidebar {
@@ -133,6 +145,7 @@
     display: grid;
     grid-template-columns: 1fr 2fr;
     align-items: center;
+    cursor: default;
 }
 
 .sidebar ul {
@@ -150,12 +163,21 @@
     align-items: center;
 }
 
+.sidebar ul li img {
+    cursor: pointer;
+}
+
+span.menuItem {
+    width: fit-content;
+    cursor: pointer;
+}
+
 .main-content {
     background-color: var(--background-color);
     display: grid;
     grid: repeat(2, minmax(0, 1fr)) / 5fr minmax(0, 2fr);
     gap: 10px;
-    padding: 15px 20px 25px 15px;
+    padding: 15px 20px 20px 15px;
     overflow: auto;
     position: relative;
 }
@@ -168,14 +190,16 @@
     top: 0;
     margin-bottom: 2px;
     background-color: var(--background-color);
-    width: 100%;
+    width: calc(100% + 5px);
     height: fit-content;
     z-index: 1;
+    cursor: default;
 }
 
 .projects {
     grid-row: 1 / -1;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
     padding-right: 10px;
     border-color: var(--main-inactive-color);
     /* -webkit-background-clip: text; */
@@ -199,11 +223,13 @@
 
 .card h1 {
     font-size: 1.2rem;
+    cursor: pointer;
 }
 
 .card p {
     font-size: 0.9rem;
     color: var(--main-content-font-color);
+    cursor: default;
 }
 
 .cardActions {
@@ -260,7 +286,8 @@ button.cardActionContainer:hover::before {
 .cardContainer {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-auto-rows: 205px;
+    grid-auto-rows: 204px;
+    margin-bottom: 5px;
     gap: 15px;
 }
 
@@ -283,12 +310,14 @@ button.cardActionContainer:hover::before {
     border-radius: 4px;
 }
 
-.announcements, .trending {
+.announcements,
+.trending {
     display: grid;
     grid-template-rows: minmax(0, 1fr) minmax(0, 10fr);
 }
 
-.announcementsContainer, .trendingContainer {
+.announcementsContainer,
+.trendingContainer {
     background-color: var(--secondary-color);
     padding: 5px 20px;
     border-radius: 10px;
@@ -307,6 +336,10 @@ button.cardActionContainer:hover::before {
     background-color: var(--secondary-color);
     font-family: 'Ubuntu';
     padding: 5px 5px;
+}
+
+.announcementCard:hover, .profileCard:hover {
+    cursor: pointer;
 }
 
 .announcementCard h1 {
